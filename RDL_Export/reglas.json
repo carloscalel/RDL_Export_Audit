@@ -1,0 +1,66 @@
+[
+  {
+    "Codigo": "SELECT_ASTERISCO",
+    "Descripcion": "Uso de SELECT * que puede afectar performance y mantenimiento.",
+    "Puntaje": 15,
+    "Severidad": "Medio",
+    "Patron": "SELECT\\s+\\*",
+    "Ambito": "SQL"
+  },
+  {
+    "Codigo": "NOLOCK",
+    "Descripcion": "Uso de NOLOCK que puede provocar lecturas sucias (dirty reads).",
+    "Puntaje": 10,
+    "Severidad": "Bajo",
+    "Patron": "\\bNOLOCK\\b",
+    "Ambito": "SQL"
+  },
+  {
+    "Codigo": "CAST_VARCHAR_SIN_LONGITUD",
+    "Descripcion": "Uso de CAST a VARCHAR sin especificar longitud.",
+    "Puntaje": 20,
+    "Severidad": "Medio",
+    "Patron": "CAST\\s*\\(\\s*.*?\\s+AS\\s+VARCHAR\\s*\\)",
+    "Ambito": "SQL"
+  },
+  {
+    "Codigo": "TIPO_DEPRECATED",
+    "Descripcion": "Uso de tipos de datos obsoletos como text, ntext o image.",
+    "Puntaje": 35,
+    "Severidad": "Alto",
+    "Patron": "\\b(text|ntext|image)\\b",
+    "Ambito": "SQL"
+  },
+  {
+    "Codigo": "SINTAXIS_ANTIGUA",
+    "Descripcion": "Uso de sintaxis antigua como sysobjects.",
+    "Puntaje": 30,
+    "Severidad": "Alto",
+    "Patron": "\\bsysobjects\\b",
+    "Ambito": "SQL"
+  },
+  {
+    "Codigo": "FUNCION_EN_WHERE",
+    "Descripcion": "Uso de funciones como YEAR/MONTH/DAY en cláusula WHERE que afectan índices.",
+    "Puntaje": 25,
+    "Severidad": "Medio",
+    "Patron": "WHERE\\s+.*(YEAR|MONTH|DAY)\\s*\\(",
+    "Ambito": "SQL"
+  },
+  {
+    "Codigo": "SELECT_SIN_WHERE",
+    "Descripcion": "SELECT sin cláusula WHERE que puede generar consultas masivas.",
+    "Puntaje": 15,
+    "Severidad": "Bajo",
+    "Patron": "SELECT\\s+.*\\s+FROM\\s+[^;]+$",
+    "Ambito": "SQL"
+  },
+  {
+    "Codigo": "USA_IMAGENES_EMBEDDED",
+    "Descripcion": "El reporte contiene imágenes incrustadas (EmbeddedImage) dentro del RDL.",
+    "Puntaje": 5,
+    "Severidad": "Bajo",
+    "Patron": "EmbeddedImage",
+    "Ambito": "XML"
+  }
+]
